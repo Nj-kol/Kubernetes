@@ -1,0 +1,9 @@
+apiVersion: njkol.io/v1alpha1
+kind: Perfume
+metadata:
+  name: ysl-la-nuit-de-lhomme
+spec:
+  brandName: "Yves Saint Laurent"
+  perfumeName: "La Nuit de l'Homme"
+  concentration : "EDP"
+  orders: 1

@@ -1,0 +1,9 @@
+apiVersion: njkol.io/v1alpha1
+kind: Perfume
+metadata:
+  name: allure-homme-sport-extreme
+spec:
+  brandName: "Chanel"
+  perfumeName: "Allure Homme Sport Extreme"
+  concentration : "EDT"
+  orders: 2

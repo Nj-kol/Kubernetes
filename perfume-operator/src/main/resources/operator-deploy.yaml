@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: perfume-operator
+spec:
+  selector:
+    matchLabels:
+      app: perfume-operator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: perfume-operator
+    spec:
+      serviceAccountName: perfume-operator-sa
+      containers:
+        - name: perfume-operator
+          image: perfume-operator
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000

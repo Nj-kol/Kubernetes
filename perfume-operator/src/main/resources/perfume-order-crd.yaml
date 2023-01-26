@@ -1,0 +1,43 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: perfumes.njkol.io
+  # https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/2337-k8s.io-group-protection/README.md
+  annotations:
+    "api-approved.kubernetes.io": "unapproved, experimental-only; please get an approval from Kubernetes API reviewers if you're trying to develop a CRD in the *.k8s.io or *.kubernetes.io groups"
+spec:
+  group: njkol.io
+  names:
+    kind: Perfume
+    plural: perfumes
+    singular: perfume
+    shortNames:
+      - grt
+  scope: Namespaced
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        # schema used for validation
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                brandName:
+                  type: string
+                perfumeName:
+                  type: string
+                concentration:
+                  type: string
+                orders:
+                  type: integer
+                  minimum: 1
+                  maximum: 10
+            status:
+              type: object
+              properties:
+                availableUnits:
+                  type: integer
