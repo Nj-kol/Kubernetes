@@ -18,7 +18,7 @@ mvn clean install
 ### How to Run
 
 ```shell
-export KUBECONFIG=${HOME}/.k3d/kubeconfig-tescolocal.yaml
+export KUBECONFIG=${HOME}/.k3d/kubeconfig-local.yaml
 mvn exec:java -Dexec.mainClass=com.njkol.perfume.operator.PerfumeOrderOperatorMain
 ```
 
@@ -44,11 +44,11 @@ BASE_PATH=<some_path>/perfume-operator
 
 sudo docker image build -t mysql-user-data-service ${BASE_PATH}
 
-docker build -t nexusdockerhosted.sys.ourtesco.com/perfume-operator .
+docker build -t perfume-operator .
 
-docker push nexusdockerhosted.sys.ourtesco.com/perfume-operator
+docker push perfume-operator
 
-docker pull nexusdockerhosted.sys.ourtesco.com/perfume-operator
+docker pull perfume-operator
 ```
 
 ## RBAC Setup
